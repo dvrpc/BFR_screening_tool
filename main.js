@@ -46,4 +46,32 @@ form.addEventListener("change", function () {
   } else {
     map.setLayoutProperty("traffic_counts", "visibility", "none");
   }
+  let bike_counts = form.elements["bike_counts"];
+
+  if (bike_counts.checked) {
+    map.setLayoutProperty("bike_counts", "visibility", "visible");
+  } else {
+    map.setLayoutProperty("bike_counts", "visibility", "none");
+  }
+  let circuit = form.elements["circuit"];
+
+  if (circuit.checked) {
+    map.setLayoutProperty("circuit", "visibility", "visible");
+  } else {
+    map.setLayoutProperty("circuit", "visibility", "none");
+  }
+  let lts = form.elements["lts"];
+
+  if (lts.checked) {
+    map.setLayoutProperty("lts", "visibility", "visible");
+  } else {
+    map.setLayoutProperty("lts", "visibility", "none");
+  }
+  let rail_stops = form.elements["rail_stops"];
+
+  if (rail_stops.checked) {
+    map.setLayoutProperty("rail_stops", "visibility", "visible");
+  } else {
+    map.setLayoutProperty("rail_stops", "visibility", "none");
+  }
 });
