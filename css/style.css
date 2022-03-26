@@ -38,7 +38,7 @@ body {
   background-color: whitesmoke;
   border-radius: 3px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-  font: 12px/20px "Roboto", sans-serif;
+  font: 12px/20px "Barlow", sans-serif;
   padding: 0px;
   position: absolute;
   left: 10px;
@@ -82,19 +82,19 @@ img {
 
 h1 {
   color: black;
-  font-family: "Play", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: medium;
 }
 h4 {
   color: black;
-  font-family: "Play", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: small;
   margin: 1px;
   padding: 0px;
 }
 h5 {
   color: white;
-  font-family: "Play", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: small;
   margin: 1px;
   padding: 0px;
@@ -102,13 +102,19 @@ h5 {
 }
 p {
   color: black;
-  font-family: "Roboto", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-size: small;
+  padding: 0px;
+}
+label {
+  color: black;
+  font-family: "Barlow", sans-serif;
   font-size: small;
   padding: 0px;
 }
 .p2 {
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 12;
   line-height: 150%;
 }
@@ -126,7 +132,7 @@ p {
   background-color: #555;
   color: #fff;
   text-align: left;
-  font-family: "Roboto", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: small;
   border-radius: 5px;
   padding: 8px;
