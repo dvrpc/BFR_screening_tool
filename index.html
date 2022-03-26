@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BFR Screening Rocket Fuel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <div id="map"></div>
+    <div id="legend">
+      <h1>Layers</h1>
+      <form id="legend-form">
+        <div>
+          <input
+            type="checkbox"
+            id="boundaries"
+            name="boundaries"
+            value="boundaries"
+            checked
+          />
+          <label for="boundaries"> Municipal Boundaries</label><br />
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="planned-segments"
+            name="planned-segments"
+            value="planned-segments"
+            checked
+          />
+          <label for="planned-segments"> Repaving Segments</label><br />
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="traffic_counts"
+            name="traffic_counts"
+            value="traffic_counts"
+            checked
+          />
+          <label for="traffic_counts"> Traffic Counts</label><br />
+        </div>
+      </form>
+    </div>
+
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
