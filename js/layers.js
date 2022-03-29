@@ -36,6 +36,9 @@ const layers = {
     id: "traffic_counts",
     type: "circle",
     source: "traffic_counts",
+    layout: {
+      visibility: "none",
+    },
     paint: {
       "circle-opacity": 0.4,
       "circle-radius": 3,
@@ -46,6 +49,9 @@ const layers = {
     id: "bike_counts",
     type: "circle",
     source: "bike_counts",
+    layout: {
+      visibility: "none",
+    },
     paint: {
       "circle-opacity": 0.9,
       "circle-radius": 4,
@@ -56,6 +62,9 @@ const layers = {
     id: "lts",
     type: "line",
     source: "lts",
+    layout: {
+      visibility: "none",
+    },
     paint: {
       "line-width": 1.25,
       "line-color": [
@@ -78,6 +87,9 @@ const layers = {
     type: "line",
     source: "lts",
     filter: ["all", ["!=", "bikefacili", "No Accomodation"]],
+    layout: {
+      visibility: "none",
+    },
     paint: {
       "line-color": [
         "match",
@@ -104,6 +116,9 @@ const layers = {
     id: "circuit",
     type: "line",
     source: "circuit",
+    layout: {
+      visibility: "none",
+    },
     paint: {
       "line-width": 1.5,
       "line-color": [
@@ -114,9 +129,9 @@ const layers = {
         "Planned",
         "#2a89a3", //blue
         "In Progress",
-        "#9003fc", //purple
+        "#664287", //purple
         "Pipeline",
-        "#fc8c03", //orange
+        "#735540", //brown
         "gray",
       ],
       "line-dasharray": [2, 1],
@@ -126,6 +141,9 @@ const layers = {
     id: "rail_stops",
     type: "circle",
     source: "rail_stops",
+    layout: {
+      visibility: "none",
+    },
     paint: {
       "circle-opacity": 0.6,
       "circle-radius": 6,

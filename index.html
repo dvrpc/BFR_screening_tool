@@ -26,19 +26,9 @@
     <div id="title">
       <h1>Bike-Friendly Resurfacing: Screening Resource</h1>
     </div>
-    <div id="legend">
+    <div id="legend" , class="legend">
       <h1>Layers</h1>
       <form id="legend-form">
-        <div>
-          <input
-            type="checkbox"
-            id="boundaries"
-            name="boundaries"
-            value="boundaries"
-            checked
-          />
-          <label for="boundaries"> Municipal Boundaries</label><br />
-        </div>
         <div>
           <input
             type="checkbox"
@@ -48,6 +38,11 @@
             checked
           />
           <label for="planned-segments">Repaving Segments</label><br />
+          <div><span style="background-color: #27ae60"></span>2022</div>
+          <div><span style="background-color: #f39c12"></span>2023</div>
+          <div><span style="background-color: red"></span>2024</div>
+          <div><span style="background-color: #a569bd"></span>2025</div>
+          <div><span style="background-color: #3498db"></span>2026</div>
         </div>
         <div>
           <input
@@ -55,9 +50,12 @@
             id="traffic_counts"
             name="traffic_counts"
             value="traffic_counts"
-            checked
+            unchecked
           />
           <label for="traffic_counts"> Traffic Counts</label><br />
+          <div>
+            <span class="dot" , style="background-color: #899196"></span>
+          </div>
         </div>
         <div>
           <input
@@ -65,9 +63,12 @@
             id="bike_counts"
             name="bike_counts"
             value="bike_counts"
-            checked
+            unchecked
           />
           <label for="bike_counts"> Bike Counts</label><br />
+          <div>
+            <span class="dot" , style="background-color: pink"></span>
+          </div>
         </div>
         <div>
           <input type="checkbox" id="lts" name="lts" value="lts" checked />
@@ -79,9 +80,13 @@
             id="circuit"
             name="circuit"
             value="circuit"
-            checked
+            unchecked
           />
           <label for="circuit"> Cirtuit Trails</label><br />
+          <div><span style="background-color: #2f41a3"></span>Existing</div>
+          <div><span style="background-color: #2a89a3"></span>Planned</div>
+          <div><span style="background-color: #664287"></span>In Progress</div>
+          <div><span style="background-color: #735540"></span>Pipeline</div>
         </div>
         <div>
           <input
@@ -89,9 +94,12 @@
             id="rail_stops"
             name="rail_stops"
             value="rail_stops"
-            checked
+            unchecked
           />
           <label for="rail_stops"> Rail Stops</label><br />
+          <div>
+            <span class="dot" , style="background-color: red"></span>
+          </div>
         </div>
         <div>
           <input
@@ -99,11 +107,26 @@
             id="bike_fac"
             name="bike_fac"
             value="bike_fac"
-            checked
+            unchecked
           />
           <label for="bike_fac"> Bike Facilities</label><br />
         </div>
+        <div>
+          <input
+            type="checkbox"
+            id="boundaries"
+            name="boundaries"
+            value="boundaries"
+            checked
+          />
+          <label for="boundaries"> Municipal Boundaries</label><br />
+        </div>
       </form>
+      <div>
+        <hr />
+        Map Created by DVRPC<br />
+        Last Updated: April 2022
+      </div>
     </div>
 
     <script src="./main.js" type="module"></script>
