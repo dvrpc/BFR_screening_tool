@@ -59,9 +59,9 @@ body {
   border-color: lightslategray;
   border-width: 1px;
 }
-.dot {
-  height: 5px;
-  width: 5px;
+#dot {
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
   display: inline-block;
 }
