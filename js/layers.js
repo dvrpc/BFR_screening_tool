@@ -83,9 +83,9 @@ const layers = {
         "match",
         ["get", "bikefacili"],
         "Bike Lane",
-        "light pink",
+        "#fca9f4", //light pink
         "Bike Route",
-        "dark pink",
+        "#bd35af", //dark pink
         "Buffered Bike Lane",
         "teal",
         "Off-Road Trail/Path",
