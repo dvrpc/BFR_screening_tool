@@ -17,7 +17,7 @@ const sources = {
   },
   lts: {
     type: "geojson",
-    data: "https://opendata.arcgis.com/datasets/b0497f204cfc41b48fdd536da9b34ffe_0.geojson",
+    data: "./data/Bicycle_LTS_-_Network.geojson",
   },
   circuit: {
     type: "geojson",

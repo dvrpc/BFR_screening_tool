@@ -1,0 +1,88 @@
+const make_popup_message = (featurelist, lat, lng) => {
+  // Review every feature that was clicked on, and add a section
+  // to the popup message for each one, split by a horizontal rule tag
+  // console.log(lat);
+  let messages = [];
+
+  // Use different popup templates depending on the source layer,
+  // in order to account for slightly different columns and names
+  featurelist.forEach((feature) => {
+    //  console.log(feature);
+    if (feature.layer.source == "plan") {
+      let msg = `
+          <h4>${feature.properties["Road Name"]} / SR ${feature.properties.sr}</h4>
+          <p>Planned Year: ${feature.properties.Year}<br/>
+          From: ${feature.properties.From}<br/>
+          To: ${feature.properties.To}<br/>
+          Municipalities: ${feature.properties.muni}<br/>
+          <a href="https://maps.google.com/maps?q=&amp;layer=c&amp;cbll=${lat},${lng}" rel="nofollow ugc" target="_blank">Open Google Streetview</a>
+          </p>
+          `;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    } else if ((feature.layer.source = "circuit")) {
+      let msg = `
+        <h4>Trail: ${feature.properties["main_trail"]}</h4>
+        <p>Status: ${feature.properties.circuit}</p>
+        `;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    } else if ((feature.layer.source = "traffic_counts")) {
+      let msg = `
+        <p>Road: ${feature.properties["road"]}</br>
+        Count Number: ${feature.properties["recordnum"]}</br>
+        Year: ${feature.properties["setyear"]}</br>
+        Count Type: ${feature.properties["type"]}</br>
+        AADT: ${feature.properties["aadt"]}
+        </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    } else if ((feature.layer.source = "bike_counts")) {
+      let msg = `
+          <p>Road: ${feature.properties["road"]}</br>
+          Count Number: ${feature.properties["recordnum"]}</br>
+          Year: ${feature.properties["setyear"]}</br>
+          Facility Type: ${feature.properties["bikepedfacility"]}</br>
+          AADB: ${feature.properties["aadb"]}
+          </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    } else if ((feature.layer.source = "rail_stops")) {
+      let msg = `
+            <p>Station: ${feature.properties["station"]}</br>
+            Line: ${feature.properties["line"]}</br>
+            Service Type: ${feature.properties["type"]}</br>
+            Operator: ${feature.properties["operator"]}
+            </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    } else if ((feature.layer.source = "lts")) {
+      let msg = `
+              <p>Lanes: ${feature.properties["totnumlane"]}</br>
+              Speed: ${feature.properties["linspeed_ltse"]}</br>
+              Slope: ${feature.properties["slope_perc"]}</br>
+              Bicycle Facility: ${feature.properties["bikefacili"]}
+              </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    } else if ((feature.layer.source = "bike_fac")) {
+      let msg = `
+                <p>
+                Bicycle Facility: ${feature.properties["bikefacili"]}
+                </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    }
+  });
+
+  return messages.join("<hr>");
+};
+
+export { make_popup_message };

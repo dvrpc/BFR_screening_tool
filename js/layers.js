@@ -73,6 +73,33 @@ const layers = {
       ],
     },
   },
+  bike_fac: {
+    id: "bike_fac",
+    type: "line",
+    source: "lts",
+    filter: ["all", ["!=", "bikefacili", "No Accomodation"]],
+    paint: {
+      "line-color": [
+        "match",
+        ["get", "bikefacili"],
+        "Bike Lane",
+        "light pink",
+        "Bike Route",
+        "dark pink",
+        "Buffered Bike Lane",
+        "teal",
+        "Off-Road Trail/Path",
+        "green",
+        "Protected Bike Lane",
+        "dark blue",
+        "Sharrow",
+        "orange",
+        "gray",
+      ],
+      "line-width": 2,
+    },
+    "line-dasharray": [3, 3],
+  },
   circuit: {
     id: "circuit",
     type: "line",
@@ -83,15 +110,16 @@ const layers = {
         "match",
         ["get", "circuit"],
         "Existing",
-        "dark blue ", //dark blue
+        "#2f41a3", //dark blue
         "Planned",
-        "blue", //blue
+        "#2a89a3", //blue
         "In Progress",
-        "orange", //orange
+        "#9003fc", //purple
         "Pipeline",
-        "purple", //purple
+        "#fc8c03", //orange
         "gray",
       ],
+      "line-dasharray": [2, 1],
     },
   },
   rail_stops: {
