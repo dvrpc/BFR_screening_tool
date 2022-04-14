@@ -38,11 +38,13 @@
             checked
           />
           <label for="planned-segments">Repaving Segments</label><br />
-          <div><span style="background-color: #27ae60"></span>2022</div>
-          <div><span style="background-color: #f39c12"></span>2023</div>
-          <div><span style="background-color: red"></span>2024</div>
-          <div><span style="background-color: #a569bd"></span>2025</div>
-          <div><span style="background-color: #3498db"></span>2026</div>
+          <div id="planned-segments-legend">
+            <div><span style="background-color: #27ae60"></span>2022</div>
+            <div><span style="background-color: #f39c12"></span>2023</div>
+            <div><span style="background-color: red"></span>2024</div>
+            <div><span style="background-color: #a569bd"></span>2025</div>
+            <div><span style="background-color: #3498db"></span>2026</div>
+          </div>
         </div>
         <div>
           <input
@@ -53,7 +55,7 @@
             unchecked
           />
           <label for="traffic_counts"> Traffic Counts</label><br />
-          <div>
+          <div id="traffic_counts-legend">
             <span id="dot" , style="background-color: #899196"></span>
           </div>
         </div>
@@ -66,13 +68,14 @@
             unchecked
           />
           <label for="bike_counts"> Bike Counts</label><br />
-          <div>
+          <div id="bike_counts-legend">
             <span id="dot" , style="background-color: pink"></span>
           </div>
         </div>
         <div>
           <input type="checkbox" id="lts" name="lts" value="lts" unchecked />
           <label for="lts"> LTS</label><br />
+          <div id="lts-legend"></div>
         </div>
         <div>
           <input
@@ -83,10 +86,20 @@
             unchecked
           />
           <label for="circuit"> Cirtuit Trails</label><br />
-          <div><span style="background-color: #2f41a3"></span>Existing</div>
-          <div><span style="background-color: #2a89a3"></span>Planned</div>
-          <div><span style="background-color: #664287"></span>In Progress</div>
-          <div><span style="background-color: #735540"></span>Pipeline</div>
+          <div id="circuit-legend" style="display: none">
+            <div class="dashed">
+              <span style="background-color: #2f41a3"></span>
+              <span style="background-color: #2f41a3"></span>
+              <span style="background-color: #2f41a3"></span>
+              <span style="background-color: #2f41a3; margin-right: 5px"></span
+              >Existing
+            </div>
+            <div><span style="background-color: #2a89a3"></span>Planned</div>
+            <div>
+              <span style="background-color: #664287"></span>In Progress
+            </div>
+            <div><span style="background-color: #735540"></span>Pipeline</div>
+          </div>
         </div>
         <div>
           <input
@@ -97,7 +110,7 @@
             unchecked
           />
           <label for="rail_stops"> Rail Stops</label><br />
-          <div>
+          <div id="rail_stops-legend">
             <span id="dot" , style="background-color: red"></span>
           </div>
         </div>
@@ -110,6 +123,7 @@
             unchecked
           />
           <label for="bike_fac"> Bike Facilities</label><br />
+          <div id="bike_fac-legend"></div>
         </div>
         <div>
           <input
@@ -120,6 +134,7 @@
             checked
           />
           <label for="boundaries"> Municipal Boundaries</label><br />
+          <div id="boundaries-legend"></div>
         </div>
       </form>
       <div>

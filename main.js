@@ -39,63 +39,82 @@ map.on("load", () => {
 let form = document.getElementById("legend-form");
 form.addEventListener("change", function () {
   let boundaries = form.elements["boundaries"];
-
-  if (boundaries.checked) {
-    map.setLayoutProperty("boundaries", "visibility", "visible");
-  } else {
-    map.setLayoutProperty("boundaries", "visibility", "none");
-  }
-
   let plan = form.elements["planned-segments"];
-
-  if (plan.checked) {
-    map.setLayoutProperty("planned-segments", "visibility", "visible");
-  } else {
-    map.setLayoutProperty("planned-segments", "visibility", "none");
-  }
-
   let traffic_counts = form.elements["traffic_counts"];
-
-  if (traffic_counts.checked) {
-    map.setLayoutProperty("traffic_counts", "visibility", "visible");
-  } else {
-    map.setLayoutProperty("traffic_counts", "visibility", "none");
-  }
   let bike_counts = form.elements["bike_counts"];
-
-  if (bike_counts.checked) {
-    map.setLayoutProperty("bike_counts", "visibility", "visible");
-  } else {
-    map.setLayoutProperty("bike_counts", "visibility", "none");
-  }
   let circuit = form.elements["circuit"];
-
-  if (circuit.checked) {
-    map.setLayoutProperty("circuit", "visibility", "visible");
-  } else {
-    map.setLayoutProperty("circuit", "visibility", "none");
-  }
   let lts = form.elements["lts"];
-
-  if (lts.checked) {
-    map.setLayoutProperty("lts", "visibility", "visible");
-  } else {
-    map.setLayoutProperty("lts", "visibility", "none");
-  }
   let rail_stops = form.elements["rail_stops"];
-
-  if (rail_stops.checked) {
-    map.setLayoutProperty("rail_stops", "visibility", "visible");
-  } else {
-    map.setLayoutProperty("rail_stops", "visibility", "none");
-  }
   let bike_fac = form.elements["bike_fac"];
 
-  if (bike_fac.checked) {
-    map.setLayoutProperty("bike_fac", "visibility", "visible");
-  } else {
-    map.setLayoutProperty("bike_fac", "visibility", "none");
-  }
+  let checkboxes = [
+    boundaries,
+    plan,
+    traffic_counts,
+    bike_counts,
+    circuit,
+    lts,
+    rail_stops,
+    bike_fac,
+  ];
+  checkboxes.forEach((box) => {
+    if (box.checked) {
+      map.setLayoutProperty(box.id, "visibility", "visible");
+      document.getElementById(box.id + "-legend").style.display = "inline";
+    } else {
+      map.setLayoutProperty(box.id, "visibility", "none");
+      document.getElementById(box.id + "-legend").style.display = "none";
+    }
+  });
+
+  // if (boundaries.checked) {
+  //   map.setLayoutProperty("boundaries", "visibility", "visible");
+  // } else {
+  //   map.setLayoutProperty("boundaries", "visibility", "none");
+  // }
+
+  // if (plan.checked) {
+  //   map.setLayoutProperty("planned-segments", "visibility", "visible");
+  // } else {
+  //   map.setLayoutProperty("planned-segments", "visibility", "none");
+  //   document.getElementById("planned-segments-legend").classList.toggle("off");
+  // }
+
+  // if (traffic_counts.checked) {
+  //   map.setLayoutProperty("traffic_counts", "visibility", "visible");
+  // } else {
+  //   map.setLayoutProperty("traffic_counts", "visibility", "none");
+  // }
+
+  // if (bike_counts.checked) {
+  //   map.setLayoutProperty("bike_counts", "visibility", "visible");
+  // } else {
+  //   map.setLayoutProperty("bike_counts", "visibility", "none");
+  // }
+
+  // if (circuit.checked) {
+  //   map.setLayoutProperty("circuit", "visibility", "visible");
+  // } else {
+  //   map.setLayoutProperty("circuit", "visibility", "none");
+  // }
+
+  // if (lts.checked) {
+  //   map.setLayoutProperty("lts", "visibility", "visible");
+  // } else {
+  //   map.setLayoutProperty("lts", "visibility", "none");
+  // }
+
+  // if (rail_stops.checked) {
+  //   map.setLayoutProperty("rail_stops", "visibility", "visible");
+  // } else {
+  //   map.setLayoutProperty("rail_stops", "visibility", "none");
+  // }
+
+  // if (bike_fac.checked) {
+  //   map.setLayoutProperty("bike_fac", "visibility", "visible");
+  // } else {
+  //   map.setLayoutProperty("bike_fac", "visibility", "none");
+  // }
 });
 
 // make a popup when the user clicks on one or more of the map layers

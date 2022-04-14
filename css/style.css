@@ -50,6 +50,13 @@ body {
   margin-right: 5px;
   width: 30px;
 }
+.legend .dashed span {
+  border-radius: 10%;
+  display: inline-block;
+  height: 5px;
+  margin-right: 1px;
+  width: 5px;
+}
 .legend2 div span {
   border-radius: 10%;
   display: inline-block;
@@ -58,6 +65,9 @@ body {
   width: 30px;
   border-color: lightslategray;
   border-width: 1px;
+}
+.off {
+  display: none;
 }
 #dot {
   height: 15px;
