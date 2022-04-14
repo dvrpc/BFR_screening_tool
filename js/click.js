@@ -7,7 +7,7 @@ const make_popup_message = (featurelist, lat, lng) => {
   // Use different popup templates depending on the source layer,
   // in order to account for slightly different columns and names
   featurelist.forEach((feature) => {
-    //  console.log(feature);
+    console.log(feature.layer);
     if (feature.layer.source == "plan") {
       let msg = `
           <h4>${feature.properties["Road Name"]} / SR ${feature.properties.sr}</h4>
@@ -21,7 +21,7 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-    } else if ((feature.layer.source = "circuit")) {
+    } else if (feature.layer.source == "circuit") {
       let msg = `
         <h4>Trail: ${feature.properties["main_trail"]}</h4>
         <p>Status: ${feature.properties.circuit}</p>
@@ -29,7 +29,7 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-    } else if ((feature.layer.source = "traffic_counts")) {
+    } else if (feature.layer.source == "traffic_counts") {
       let msg = `
         <p>Road: ${feature.properties["road"]}</br>
         Count Number: ${feature.properties["recordnum"]}</br>
@@ -40,7 +40,7 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-    } else if ((feature.layer.source = "bike_counts")) {
+    } else if (feature.layer.source == "bike_counts") {
       let msg = `
           <p>Road: ${feature.properties["road"]}</br>
           Count Number: ${feature.properties["recordnum"]}</br>
@@ -51,7 +51,7 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-    } else if ((feature.layer.source = "rail_stops")) {
+    } else if (feature.layer.source == "rail_stops") {
       let msg = `
             <p>Station: ${feature.properties["station"]}</br>
             Line: ${feature.properties["line"]}</br>
@@ -61,7 +61,7 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-    } else if ((feature.layer.source = "lts")) {
+    } else if (feature.layer.id == "lts") {
       let msg = `
               <p>Lanes: ${feature.properties["totnumlane"]}</br>
               Speed: ${feature.properties["linspeed_ltse"]}</br>
@@ -71,15 +71,15 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-    } //else if ((feature.layer.source = "bike_fac")) {
-    //let msg = `
-    //          <p>
-    //          Bicycle Facility: ${feature.properties["bikefacili"]}
-    //          </p>`;
-    //if (messages.indexOf(msg) == -1) {
-    //  messages.push(msg);
-    //}
-    //}
+    } else if (feature.layer.id == "bike_fac") {
+      let msg = `
+             <p>
+             Bicycle Facility: ${feature.properties["bikefacili"]}
+             </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    }
   });
 
   return messages.join("<hr>");
