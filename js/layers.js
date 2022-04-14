@@ -61,7 +61,8 @@ const layers = {
   lts: {
     id: "lts",
     type: "line",
-    source: "lts",
+    source: "lts_vector",
+    "source-layer": "existing_conditions_lts",
     layout: {
       visibility: "none",
     },
@@ -70,13 +71,13 @@ const layers = {
       "line-color": [
         "match",
         ["get", "lts_score"],
-        "1",
+        1,
         "#2c7d3f ", //dark green
-        "2",
+        2,
         "#60e07e", //light green
-        "3",
+        3,
         "yellow", //yellow
-        "4",
+        4,
         "red", //red
         "gray",
       ],
@@ -85,7 +86,8 @@ const layers = {
   bike_fac: {
     id: "bike_fac",
     type: "line",
-    source: "lts",
+    source: "lts_vector",
+    "source-layer": "existing_conditions_lts",
     filter: ["all", ["!=", "bikefacili", "No Accomodation"]],
     layout: {
       visibility: "none",
