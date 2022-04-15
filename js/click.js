@@ -83,7 +83,7 @@ const make_popup_message = (featurelist, lat, lng) => {
       let msg = `
              <p>
              AADT: ${feature.properties["CUR_AADT"]}</br>
-             Truck Percent: ${feature.properties["TRK_PCT"]}</br>
+             Truck Percent: ${feature.properties["TRK_PCT"]}%</br>
              Truck Volume: ${feature.properties["ADTT_CUR"]}
              </p>`;
       if (messages.indexOf(msg) == -1) {

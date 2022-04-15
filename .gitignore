@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 /data/Bicycle_LTS_-_Network.geojson
+/data/RMSTRAFFIC_(Traffic_Volumes).geojson

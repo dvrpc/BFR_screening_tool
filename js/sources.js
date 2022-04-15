@@ -29,7 +29,7 @@ const sources = {
   },
   traffic: {
     type: "geojson",
-    data: "https://gis.penndot.gov/arcgis/rest/services/opendata/roadwaytraffic/MapServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    data: "./data/RMSTRAFFIC_(Traffic_Volumes).geojson",
   },
 };
 
