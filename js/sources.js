@@ -27,6 +27,10 @@ const sources = {
     type: "geojson",
     data: "https://opendata.arcgis.com/datasets/7bf1c56a02d5413981c031a2772b9507_0.geojson",
   },
+  traffic: {
+    type: "geojson",
+    data: "https://gis.penndot.gov/arcgis/rest/services/opendata/roadwaytraffic/MapServer/0/query?outFields=*&where=1%3D1&f=geojson",
+  },
 };
 
 export { sources };

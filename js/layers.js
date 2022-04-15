@@ -99,13 +99,13 @@ const layers = {
         "Bike Lane",
         "#fca9f4", //light pink
         "Bike Route",
-        "#bd35af", //dark pink
+        "yellow", //dark pink
         "Buffered Bike Lane",
-        "teal",
-        "Off-Road Trail/Path",
+        "purple",
+        "Off-road Trail/Path",
         "green",
         "Protected Bike Lane",
-        "dark blue",
+        "blue",
         "Sharrow",
         "orange",
         "gray",
@@ -150,6 +150,16 @@ const layers = {
       "circle-opacity": 0.6,
       "circle-radius": 6,
       "circle-color": "red",
+    },
+  },
+  traffic_vol: {
+    id: "traffic_vol",
+    type: "line",
+    source: "traffic",
+    layout: { visibility: "none" },
+    paint: {
+      "line-width": 1.5,
+      "line-color": "#6d95a3", //goldenrod
     },
   },
 };
