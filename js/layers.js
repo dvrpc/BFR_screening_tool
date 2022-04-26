@@ -1,3 +1,39 @@
+let volColor = [
+  "interpolate",
+  ["linear"],
+  ["get", "CUR_AADT"],
+  1000,
+  "#ffffd4",
+  5000,
+  "#fee391",
+  10000,
+  "#fec44f",
+  20000,
+  "#fe9929",
+  50000,
+  "#d95f0e",
+  100000,
+  "#993404",
+];
+
+let trkColor = [
+  "interpolate",
+  ["linear"],
+  ["get", "TRK_PCT"],
+  5,
+  "#feebe2",
+  10,
+  "#fcc5c0",
+  15,
+  "#fa9fb5",
+  20,
+  "#f768a1",
+  25,
+  "#c51b8a",
+  100,
+  "#7a0177",
+];
+
 const layers = {
   boundaries: {
     id: "boundaries",
@@ -152,6 +188,7 @@ const layers = {
       "circle-color": "red",
     },
   },
+
   traffic_vol: {
     id: "traffic_vol",
     type: "line",
@@ -160,7 +197,7 @@ const layers = {
     filter: ["all", ["==", "DISTRICT_NO", "06"]],
     paint: {
       "line-width": 1.5,
-      "line-color": "#6d95a3",
+      "line-color": volColor,
     },
   },
   truck_percent: {
@@ -170,8 +207,8 @@ const layers = {
     layout: { visibility: "none" },
     filter: ["all", ["==", "DISTRICT_NO", "06"]],
     paint: {
-      "line-width": 1.5,
-      "line-color": "#6d95a3", //goldenrod
+      "line-width": 1.1,
+      "line-color": trkColor,
     },
   },
 };

@@ -56,7 +56,40 @@
           />
           <label for="traffic_vol"> PennDOT Traffic Volume </label><br />
           <div id="traffic_vol-legend" style="display: none">
-            <span style="background-color: #6d95a3"></span>
+            <div>
+              <span style="background-color: #ffffd4"></span> Up to 1,000 >
+            </div>
+            <div>
+              <span style="background-color: #fee391"></span> 1,001 - 5,000 >
+            </div>
+            <div>
+              <span style="background-color: #fec44f"></span> 5,001 - 10,00 >
+            </div>
+            <div>
+              <span style="background-color: #fe9929"></span> 10,001 - 20,000 >
+            </div>
+            <div>
+              <span style="background-color: #d95f0e"></span> 20,001 - 50,000 >
+            </div>
+            <div><span style="background-color: #993404"></span> 50,001+ ></div>
+          </div>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="truck_percent"
+            name="truck_percent"
+            value="truck_percent"
+            unchecked
+          />
+          <label for="truck_percent"> PennDOT Truck Percentage </label><br />
+          <div id="truck_percent-legend" style="display: none">
+            <div><span style="background-color: #feebe2"></span> 0 - 5 ></div>
+            <div><span style="background-color: #fcc5c0"></span> 6 - 10 ></div>
+            <div><span style="background-color: #fa9fb5"></span> 11 - 15 ></div>
+            <div><span style="background-color: #f768a1"></span> 16 - 20 ></div>
+            <div><span style="background-color: #c51b8a"></span> 20 - 25 ></div>
+            <div><span style="background-color: #7a0177"></span> 25+ ></div>
           </div>
         </div>
         <div>
@@ -67,7 +100,7 @@
             value="traffic_counts"
             unchecked
           />
-          <label for="traffic_counts"> Traffic Counts</label><br />
+          <label for="traffic_counts"> DVRPC Traffic Counts</label><br />
           <div id="traffic_counts-legend" style="display: none">
             <span id="dot" , style="background-color: #899196"></span>
           </div>
@@ -80,7 +113,7 @@
             value="bike_counts"
             unchecked
           />
-          <label for="bike_counts"> Bike Counts</label><br />
+          <label for="bike_counts"> DVRPC Bike Counts</label><br />
           <div id="bike_counts-legend" style="display: none">
             <span id="dot" , style="background-color: pink"></span>
           </div>
