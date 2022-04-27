@@ -29,7 +29,7 @@ const sources = {
   },
   traffic: {
     type: "geojson",
-    data: "./data/rmstraffic.geojson",
+    data: "https://gis.penndot.gov/arcgis/rest/services/opendata/roadwaytraffic/MapServer/0/query?where=district_no=%2706%27&outFields=ADTT_CUR,TRK_PCT,CUR_AADT&outSR=4326&f=geojson",
   },
 };
 
