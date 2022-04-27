@@ -13,7 +13,7 @@ const sources = {
   },
   bike_counts: {
     type: "geojson",
-    data: "https://opendata.arcgis.com/datasets/0a456d1d865c45baaacf8d26e189b347_0.geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BicycleCounts/FeatureServer/0/query?where=1%3D1&outfields=*&outSR=4326&f=geojson",
   },
   lts_vector: {
     type: "vector",
@@ -21,15 +21,15 @@ const sources = {
   },
   circuit: {
     type: "geojson",
-    data: "https://opendata.arcgis.com/datasets/1bc286c5bbd14cfca7bedbacc1fafb94_0.geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/CircuitTrails/FeatureServer/0/query?where=1%3D1&outfields=*&outSR=4326&f=geojson",
   },
   rail_stops: {
     type: "geojson",
-    data: "https://opendata.arcgis.com/datasets/7bf1c56a02d5413981c031a2772b9507_0.geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/PassengerRailStations/FeatureServer/0/query?where=1%3D1&outfields=*&outSR=4326&f=geojson",
   },
   traffic: {
     type: "geojson",
-    data: "./data/RMSTRAFFIC_(Traffic_Volumes).geojson",
+    data: "./data/rmstraffic.geojson",
   },
 };
 
