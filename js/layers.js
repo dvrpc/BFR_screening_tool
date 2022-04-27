@@ -194,7 +194,7 @@ const layers = {
     type: "line",
     source: "traffic",
     layout: { visibility: "none" },
-    filter: ["all", ["==", "DISTRICT_NO", "06"]],
+    //filter: ["all", ["==", "DISTRICT_NO", "06"]],
     paint: {
       "line-width": 1.5,
       "line-color": volColor,
@@ -205,7 +205,7 @@ const layers = {
     type: "line",
     source: "traffic",
     layout: { visibility: "none" },
-    filter: ["all", ["==", "DISTRICT_NO", "06"]],
+    //filter: ["all", ["==", "DISTRICT_NO", "06"]],
     paint: {
       "line-width": 1.1,
       "line-color": trkColor,
