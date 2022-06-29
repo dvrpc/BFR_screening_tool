@@ -19,7 +19,7 @@ map.on("load", () => {
   //load sources
   for (const source in sources) map.addSource(source, sources[source]);
   //load layer styles
-  for (const layer in layers) map.addLayer(layers[layer], firstSymbolId);
+  for (const layer in layers) map.addLayer(layers[layer], "road-label");
   // set the pointer style when hovering specific layers
   [
     "planned-segments",

@@ -4,7 +4,7 @@ const make_map = () => {
 
   let map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/light-v10",
+    style: "mapbox://styles/dvrpcomad/cks6eiqga0tmc17p3ecw7ij53",
     center: [-75.273611, 40.036894],
     zoom: 9.5,
   });
