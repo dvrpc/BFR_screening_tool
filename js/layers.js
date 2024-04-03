@@ -53,16 +53,16 @@ const layers = {
       "line-width": 3,
       "line-color": [
         "match",
-        ["get", "CALENDAR_YR"],
-        2025,
+        ["get", "Calendar year"],
+        "2024",
         "#27AE60 ", //green
-        2026,
+        "2025",
         "#F39C12", //orange
-        2027,
+        "2026",
         "red", //red
-        2028,
+        "2027",
         "#A569BD", //purple
-        2029,
+        "2028",
         "#3498DB", //blue
         "gray",
       ],
