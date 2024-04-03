@@ -1,229 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>BFR Screening Rocket Fuel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
-    <link
-      href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <link href="./css/style.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
-      type="text/css"
-    />
-    <div id="map"></div>
-    <div id="title">
-      <h1>Bike-Friendly Resurfacing: Screening Resource</h1>
-    </div>
-    <div id="legend" , class="legend">
-      <h1>Layers</h1>
-      <form id="legend-form">
-        <div>
-          <input
-            type="checkbox"
-            id="planned-segments"
-            name="planned-segments"
-            value="planned-segments"
-            checked
-          />
-          <label for="planned-segments">Repaving Segments</label><br />
-          <div id="planned-segments-legend">
-            <div><span style="background-color: #27ae60"></span>2022</div>
-            <div><span style="background-color: #f39c12"></span>2023</div>
-            <div><span style="background-color: red"></span>2024</div>
-            <div><span style="background-color: #a569bd"></span>2025</div>
-            <div><span style="background-color: #3498db"></span>2026</div>
-          </div>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="traffic_vol"
-            name="traffic_vol"
-            value="traffic_vol"
-            unchecked
-          />
-          <label for="traffic_vol"> PennDOT Traffic Volume </label><br />
-          <div id="traffic_vol-legend" style="display: none">
-            <div>
-              <span style="background-color: #ffffd4"></span> Up to 1,000 >
-            </div>
-            <div>
-              <span style="background-color: #fee391"></span> 1,001 - 5,000 >
-            </div>
-            <div>
-              <span style="background-color: #fec44f"></span> 5,001 - 10,00 >
-            </div>
-            <div>
-              <span style="background-color: #fe9929"></span> 10,001 - 20,000 >
-            </div>
-            <div>
-              <span style="background-color: #d95f0e"></span> 20,001 - 50,000 >
-            </div>
-            <div><span style="background-color: #993404"></span> 50,001+ ></div>
-          </div>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="truck_percent"
-            name="truck_percent"
-            value="truck_percent"
-            unchecked
-          />
-          <label for="truck_percent"> PennDOT Truck Percentage </label><br />
-          <div id="truck_percent-legend" style="display: none">
-            <div><span style="background-color: #feebe2"></span> 0 - 5 ></div>
-            <div><span style="background-color: #fcc5c0"></span> 6 - 10 ></div>
-            <div><span style="background-color: #fa9fb5"></span> 11 - 15 ></div>
-            <div><span style="background-color: #f768a1"></span> 16 - 20 ></div>
-            <div><span style="background-color: #c51b8a"></span> 20 - 25 ></div>
-            <div><span style="background-color: #7a0177"></span> 25+ ></div>
-          </div>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="traffic_counts"
-            name="traffic_counts"
-            value="traffic_counts"
-            unchecked
-          />
-          <label for="traffic_counts"> DVRPC Traffic Counts</label><br />
-          <div id="traffic_counts-legend" style="display: none">
-            <span id="dot" , style="background-color: #899196"></span>
-          </div>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="bike_counts"
-            name="bike_counts"
-            value="bike_counts"
-            unchecked
-          />
-          <label for="bike_counts"> DVRPC Bike Counts</label><br />
-          <div id="bike_counts-legend" style="display: none">
-            <span id="dot" , style="background-color: pink"></span>
-          </div>
-        </div>
-        <div>
-          <input type="checkbox" id="lts" name="lts" value="lts" unchecked />
-          <label for="lts"> LTS</label><br />
-          <div id="lts-legend" style="display: none">
-            <div><span style="background-color: #2c7d3f"></span>LTS 1</div>
-            <div><span style="background-color: #60e07e"></span>LTS 2</div>
-            <div><span style="background-color: yellow"></span>LTS 3</div>
-            <div><span style="background-color: red"></span>LTS 4</div>
-          </div>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="circuit"
-            name="circuit"
-            value="circuit"
-            unchecked
-          />
-          <label for="circuit"> Circuit Trails</label><br />
-          <div id="circuit-legend" style="display: none">
-            <div class="dashed">
-              <span style="background-color: #2f41a3"></span>
-              <span style="background-color: #2f41a3"></span>
-              <span style="background-color: #2f41a3"></span>
-              <span style="background-color: #2f41a3; margin-right: 5px"></span
-              >Existing
-            </div>
-            <div class="dashed">
-              <span style="background-color: #2a89a3"></span>
-              <span style="background-color: #2a89a3"></span>
-              <span style="background-color: #2a89a3"></span>
-              <span style="background-color: #2a89a3; margin-right: 5px"></span
-              >Planned
-            </div>
-            <div class="dashed">
-              <span style="background-color: #664287"></span>
-              <span style="background-color: #664287"></span>
-              <span style="background-color: #664287"></span>
-              <span style="background-color: #664287; margin-right: 5px"></span
-              >In Progress
-            </div>
-            <div class="dashed">
-              <span style="background-color: #735540"></span>
-              <span style="background-color: #735540"></span>
-              <span style="background-color: #735540"></span>
-              <span style="background-color: #735540; margin-right: 5px"></span
-              >Pipeline
-            </div>
-          </div>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="rail_stops"
-            name="rail_stops"
-            value="rail_stops"
-            unchecked
-          />
-          <label for="rail_stops"> Rail Stops</label><br />
-          <div id="rail_stops-legend" style="display: none">
-            <span id="dot" , style="background-color: red"></span>
-          </div>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="bike_fac"
-            name="bike_fac"
-            value="bike_fac"
-            unchecked
-          />
-          <label for="bike_fac"> Bike Facilities</label><br />
-          <div id="bike_fac-legend" style="display: none">
-            <div><span style="background-color: #fca9f4"></span>Bike Lane</div>
-            <div><span style="background-color: yellow"></span>Bike Route</div>
-            <div>
-              <span style="background-color: purple"></span>Buffered Bike Lane
-            </div>
-            <div>
-              <span style="background-color: green"></span>Off-road Trail/Path
-            </div>
-            <div>
-              <span style="background-color: blue"></span>Protected Bike Lane
-            </div>
-            <div><span style="background-color: orange"></span>Sharrow</div>
-          </div>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="boundaries"
-            name="boundaries"
-            value="boundaries"
-            checked
-          />
-          <label for="boundaries"> Municipal Boundaries</label><br />
-          <div id="boundaries-legend"></div>
-        </div>
-      </form>
-      <div>
-        <hr />
-        Map Created by DVRPC<br />
-        Last Updated: June 2022
-      </div>
-    </div>
 
-    <script src="./main.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>BFR Screening Rocket Fuel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow" rel="stylesheet" />
+</head>
+
+<body>
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+    type="text/css" />
+  <div id="map"></div>
+  <div id="title">
+    <h1>Bike-Friendly Resurfacing: Screening Resource</h1>
+  </div>
+  <div id="legend" , class="legend">
+    <h1>Layers</h1>
+    <form id="legend-form">
+      <div>
+        <input type="checkbox" id="planned-segments" name="planned-segments" value="planned-segments" checked />
+        <label for="planned-segments">Repaving Segments</label><br />
+        <div id="planned-segments-legend">
+          <div><span style="background-color: #27ae60"></span>2025</div>
+          <div><span style="background-color: #f39c12"></span>2026</div>
+          <div><span style="background-color: red"></span>2027</div>
+          <div><span style="background-color: #a569bd"></span>2028</div>
+          <div><span style="background-color: #3498db"></span>2029</div>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="traffic_vol" name="traffic_vol" value="traffic_vol" unchecked />
+        <label for="traffic_vol"> PennDOT Traffic Volume </label><br />
+        <div id="traffic_vol-legend" style="display: none">
+          <div>
+            <span style="background-color: #ffffd4"></span> Up to 1,000 >
+          </div>
+          <div>
+            <span style="background-color: #fee391"></span> 1,001 - 5,000 >
+          </div>
+          <div>
+            <span style="background-color: #fec44f"></span> 5,001 - 10,00 >
+          </div>
+          <div>
+            <span style="background-color: #fe9929"></span> 10,001 - 20,000 >
+          </div>
+          <div>
+            <span style="background-color: #d95f0e"></span> 20,001 - 50,000 >
+          </div>
+          <div><span style="background-color: #993404"></span> 50,001+ ></div>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="truck_percent" name="truck_percent" value="truck_percent" unchecked />
+        <label for="truck_percent"> PennDOT Truck Percentage </label><br />
+        <div id="truck_percent-legend" style="display: none">
+          <div><span style="background-color: #feebe2"></span> 0 - 5 ></div>
+          <div><span style="background-color: #fcc5c0"></span> 6 - 10 ></div>
+          <div><span style="background-color: #fa9fb5"></span> 11 - 15 ></div>
+          <div><span style="background-color: #f768a1"></span> 16 - 20 ></div>
+          <div><span style="background-color: #c51b8a"></span> 20 - 25 ></div>
+          <div><span style="background-color: #7a0177"></span> 25+ ></div>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="traffic_counts" name="traffic_counts" value="traffic_counts" unchecked />
+        <label for="traffic_counts"> DVRPC Traffic Counts</label><br />
+        <div id="traffic_counts-legend" style="display: none">
+          <span id="dot" , style="background-color: #899196"></span>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="bike_counts" name="bike_counts" value="bike_counts" unchecked />
+        <label for="bike_counts"> DVRPC Bike Counts</label><br />
+        <div id="bike_counts-legend" style="display: none">
+          <span id="dot" , style="background-color: pink"></span>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="lts" name="lts" value="lts" unchecked />
+        <label for="lts"> LTS</label><br />
+        <div id="lts-legend" style="display: none">
+          <div><span style="background-color: #2c7d3f"></span>LTS 1</div>
+          <div><span style="background-color: #60e07e"></span>LTS 2</div>
+          <div><span style="background-color: yellow"></span>LTS 3</div>
+          <div><span style="background-color: red"></span>LTS 4</div>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="circuit" name="circuit" value="circuit" unchecked />
+        <label for="circuit"> Circuit Trails</label><br />
+        <div id="circuit-legend" style="display: none">
+          <div class="dashed">
+            <span style="background-color: #2f41a3"></span>
+            <span style="background-color: #2f41a3"></span>
+            <span style="background-color: #2f41a3"></span>
+            <span style="background-color: #2f41a3; margin-right: 5px"></span>Existing
+          </div>
+          <div class="dashed">
+            <span style="background-color: #2a89a3"></span>
+            <span style="background-color: #2a89a3"></span>
+            <span style="background-color: #2a89a3"></span>
+            <span style="background-color: #2a89a3; margin-right: 5px"></span>Planned
+          </div>
+          <div class="dashed">
+            <span style="background-color: #664287"></span>
+            <span style="background-color: #664287"></span>
+            <span style="background-color: #664287"></span>
+            <span style="background-color: #664287; margin-right: 5px"></span>In Progress
+          </div>
+          <div class="dashed">
+            <span style="background-color: #735540"></span>
+            <span style="background-color: #735540"></span>
+            <span style="background-color: #735540"></span>
+            <span style="background-color: #735540; margin-right: 5px"></span>Pipeline
+          </div>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="rail_stops" name="rail_stops" value="rail_stops" unchecked />
+        <label for="rail_stops"> Rail Stops</label><br />
+        <div id="rail_stops-legend" style="display: none">
+          <span id="dot" , style="background-color: red"></span>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="bike_fac" name="bike_fac" value="bike_fac" unchecked />
+        <label for="bike_fac"> Bike Facilities</label><br />
+        <div id="bike_fac-legend" style="display: none">
+          <div><span style="background-color: #fca9f4"></span>Bike Lane</div>
+          <div><span style="background-color: yellow"></span>Bike Route</div>
+          <div>
+            <span style="background-color: purple"></span>Buffered Bike Lane
+          </div>
+          <div>
+            <span style="background-color: green"></span>Off-road Trail/Path
+          </div>
+          <div>
+            <span style="background-color: blue"></span>Protected Bike Lane
+          </div>
+          <div><span style="background-color: orange"></span>Sharrow</div>
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="boundaries" name="boundaries" value="boundaries" checked />
+        <label for="boundaries"> Municipal Boundaries</label><br />
+        <div id="boundaries-legend"></div>
+      </div>
+    </form>
+    <div>
+      <hr />
+      Map Created by DVRPC<br />
+      Last Updated: June 2022
+    </div>
+  </div>
+
+  <script src="./main.js" type="module"></script>
+</body>
+
 </html>
