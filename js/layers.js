@@ -211,6 +211,17 @@ const layers = {
       "line-color": trkColor,
     },
   },
+  septa_bus: {
+    id: "septa_bus",
+    type: "line",
+    source: "septa_bus",
+    layout: { visibility: "none" },
+    //filter: ["all", ["==", "DISTRICT_NO", "06"]],
+    paint: {
+      "line-width": 1.1,
+      "line-color": "#2f41a3",
+    },
+  },
 };
 
 export { layers };
