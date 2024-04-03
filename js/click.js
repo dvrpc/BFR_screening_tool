@@ -89,6 +89,14 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
+    } else if (feature.layer.source == "septa_bus") {
+      let msg = `
+             <p>
+             Line: ${feature.properties["LineAbbr"]}</br>
+             </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
     }
   });
 
