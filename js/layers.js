@@ -34,6 +34,16 @@ let trkColor = [
   "#7a0177",
 ];
 
+let road_dietColor = [
+  "interpolate",
+  ["linear"],
+  ["get", "VPHPD"],
+  850,
+  "#1d4e89",
+  1000,
+  "#9aacae",
+];
+
 const layers = {
   boundaries: {
     id: "boundaries",
@@ -209,6 +219,16 @@ const layers = {
     paint: {
       "line-width": 1.1,
       "line-color": trkColor,
+    },
+  },
+  road_diet: {
+    id: "road_diet",
+    type: "line",
+    source: "road_diet",
+    layout: { visibility: "none" },
+    paint: {
+      "line-width": 1.3,
+      "line-color": road_dietColor,
     },
   },
 };

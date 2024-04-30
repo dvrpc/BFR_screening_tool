@@ -89,6 +89,15 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
+    } else if (feature.layer.source == "road_diet") {
+      let msg = `
+             <p>
+             St. Rt. No: ${feature.properties["st_rt_no"]}</br>
+             VPHPD: ${feature.properties["VPHPD"]}
+             </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
     }
   });
 

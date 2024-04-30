@@ -31,6 +31,10 @@ const sources = {
     type: "geojson",
     data: "./data/rmstraffic.geojson",
   },
+  road_diet: {
+    type: "geojson",
+    data: "./data/road_diet_candidates.geojson",
+  },
 };
 
 export { sources };
