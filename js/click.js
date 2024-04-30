@@ -10,11 +10,11 @@ const make_popup_message = (featurelist, lat, lng) => {
     console.log(feature.layer);
     if (feature.layer.source == "plan") {
       let msg = `
-          <h4>${feature.properties["Road Name"]} / SR ${feature.properties.sr}</h4>
-          <p>Planned Year: ${feature.properties.Year}<br/>
-          From: ${feature.properties.From}<br/>
-          To: ${feature.properties.To}<br/>
-          Municipalities: ${feature.properties.muni}<br/>
+          <h4>${feature.properties["Loc Road Name RMS"]} / SR ${feature.properties.sr}</h4>
+          <p>Planned Year: ${feature.properties["Calendar year"]}<br/>
+          From: ${feature.properties["Intersection From"]}<br/>
+          To: ${feature.properties["Intersection To"]}<br/>
+          Municipalities: ${feature.properties["Municipality Name1"]}<br/>
           <a href="https://maps.google.com/maps?q=&amp;layer=c&amp;cbll=${lat},${lng}" rel="nofollow ugc" target="_blank">Open Google Streetview</a>
           </p>
           `;
@@ -85,6 +85,14 @@ const make_popup_message = (featurelist, lat, lng) => {
              AADT: ${feature.properties["CUR_AADT"]}</br>
              Truck Percent: ${feature.properties["TRK_PCT"]}%</br>
              Truck Volume: ${feature.properties["ADTT_CUR"]}
+             </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
+    } else if (feature.layer.source == "septa_bus") {
+      let msg = `
+             <p>
+             Line: ${feature.properties["LineAbbr"]}</br>
              </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);

@@ -63,16 +63,16 @@ const layers = {
       "line-width": 3,
       "line-color": [
         "match",
-        ["get", "Year"],
-        "2022",
-        "#27AE60 ", //green
-        "2023",
-        "#F39C12", //orange
+        ["get", "Calendar year"],
         "2024",
-        "red", //red
+        "#27AE60 ", //green
         "2025",
-        "#A569BD", //purple
+        "#F39C12", //orange
         "2026",
+        "red", //red
+        "2027",
+        "#A569BD", //purple
+        "2028",
         "#3498DB", //blue
         "gray",
       ],
@@ -219,6 +219,17 @@ const layers = {
     paint: {
       "line-width": 1.1,
       "line-color": trkColor,
+    },
+  },
+  septa_bus: {
+    id: "septa_bus",
+    type: "line",
+    source: "septa_bus",
+    layout: { visibility: "none" },
+    //filter: ["all", ["==", "DISTRICT_NO", "06"]],
+    paint: {
+      "line-width": 1.1,
+      "line-color": "#2f41a3",
     },
   },
   road_diet: {

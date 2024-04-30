@@ -31,6 +31,7 @@ map.on("load", () => {
     "bike_fac",
     "traffic_vol",
     "truck_percent",
+    "septa_bus"
     "road_diet",
   ].forEach((layer) => {
     add_pointer_when_hovering(map, layer);
@@ -40,7 +41,7 @@ map.on("load", () => {
 //define what happens when the legend form is clicked on
 
 let form = document.getElementById("legend-form");
-form.addEventListener("change", function () {
+form.addEventListener("change", function() {
   let boundaries = form.elements["boundaries"];
   let plan = form.elements["planned-segments"];
   let traffic_counts = form.elements["traffic_counts"];
@@ -51,6 +52,7 @@ form.addEventListener("change", function () {
   let bike_fac = form.elements["bike_fac"];
   let traffic_vol = form.elements["traffic_vol"];
   let truck_percent = form.elements["truck_percent"];
+  let septa_bus = form.elements["septa_bus"];
   let road_diet = form.elements["road_diet"];
 
   let checkboxes = [
@@ -64,6 +66,7 @@ form.addEventListener("change", function () {
     bike_fac,
     traffic_vol,
     truck_percent,
+    septa_bus
     road_diet,
   ];
   checkboxes.forEach((box) => {
@@ -97,6 +100,7 @@ map.on("click", (e) => {
       "bike_fac",
       "traffic_vol",
       "truck_percent",
+      "septa_bus",
       "road_diet",
     ],
   });

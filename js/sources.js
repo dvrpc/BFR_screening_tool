@@ -31,6 +31,10 @@ const sources = {
     type: "geojson",
     data: "./data/rmstraffic.geojson",
   },
+  septa_bus: {
+    type: "geojson",
+    data: "https://services2.arcgis.com/9U43PSoL47wawX5S/arcgis/rest/services/Bus_Routes/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+  },
   road_diet: {
     type: "geojson",
     data: "./data/road_diet_candidates.geojson",
