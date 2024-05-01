@@ -261,8 +261,24 @@ const layers = {
     layout: { visibility: "none" },
     paint: {
       "circle-opacity": 0.4,
-      "circle-radius": 1.5,
-      "circle-color": "green",
+      "circle-radius": 2.5,
+      "circle-color": [
+        "match",
+        ["get", "type"],
+        "Activity Center for Seniors or Disabled",
+        "#fca9f4", //light pink
+        "Health Facility",
+        "yellow",
+        "Food Store",
+        "purple",
+        "School - College, University",
+        "green",
+        "School - Private",
+        "blue",
+        "School - Public",
+        "orange",
+        "gray",
+      ],
     },
   },
   inrix: {
