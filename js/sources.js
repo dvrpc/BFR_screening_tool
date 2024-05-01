@@ -39,6 +39,10 @@ const sources = {
     type: "geojson",
     data: "./data/road_diet_candidates.geojson",
   },
+  essential_services: {
+    type: "geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/Planning/ETA_EssentialServicesPts/FeatureServer/0/query?where=1=1&outsr=4326&outfields=*&f=geojson",
+  },
 };
 
 export { sources };

@@ -242,6 +242,17 @@ const layers = {
       "line-color": road_dietColor,
     },
   },
+  essential_services: {
+    id: "essential_services",
+    type: "line",
+    source: "essential_services",
+    layout: { visibility: "none" },
+    paint: {
+      "circle-opacity": 0.4,
+      "circle-radius": 1.5,
+      "circle-color": "green",
+    },
+  },
 };
 
 export { layers };
