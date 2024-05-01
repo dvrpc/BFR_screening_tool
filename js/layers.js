@@ -253,6 +253,17 @@ const layers = {
       "circle-color": "green",
     },
   },
+  inrix: {
+    id: "inrix",
+    type: "line",
+    source: "inrix",
+    layout: { visibility: "none" },
+    filter: ["all", ["==", "state", "Pennsylvania"]],
+    paint: {
+      "line-width": 1.4,
+      "line-color": "#2f41a3",
+    },
+  },
 };
 
 export { layers };
