@@ -37,7 +37,7 @@ let trkColor = [
 let road_dietColor = [
   "interpolate",
   ["linear"],
-  ["get", "VPHPD"],
+  ["get", "vphpd"],
   850,
   "#1d4e89",
   1000,

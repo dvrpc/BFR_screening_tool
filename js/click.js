@@ -101,7 +101,7 @@ const make_popup_message = (featurelist, lat, lng) => {
       let msg = `
              <p>
              St. Rt. No: ${feature.properties["st_rt_no"]}</br>
-             VPHPD: ${feature.properties["VPHPD"]}
+             VPHPD: ${feature.properties["vphpd"]}
              </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
