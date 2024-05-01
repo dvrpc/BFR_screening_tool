@@ -45,7 +45,7 @@ const sources = {
   },
   inrix: {
     type: "geojson",
-    data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_INRIX_TravelTimeData/FeatureServer/0/query?where=state%20%3D%20'PENNSYLVANIA'&outsr=4326&outfields=*&f=geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_INRIX_TravelTimeData/FeatureServer/0/query?where=1=1&outsr=4326&outfields=*&f=geojson",
   },
 };
 
