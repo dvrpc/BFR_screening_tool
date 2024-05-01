@@ -261,7 +261,7 @@ const layers = {
     layout: { visibility: "none" },
     paint: {
       "circle-opacity": 0.4,
-      "circle-radius": 2.5,
+      "circle-radius": 5,
       "circle-color": [
         "match",
         ["get", "type"],

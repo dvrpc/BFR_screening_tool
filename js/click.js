@@ -120,7 +120,6 @@ const make_popup_message = (featurelist, lat, lng) => {
              AM PTI: ${feature.properties["ptiwkd0610"]}</br>
              PM PTI: ${feature.properties["ptiskd0307"]}</br>
              PTI Weekday Overall: ${feature.properties["ptiwkdy"]}</br>
-             ptiwkdy
              </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
