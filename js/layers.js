@@ -256,7 +256,7 @@ const layers = {
   },
   essential_services: {
     id: "essential_services",
-    type: "line",
+    type: "circle",
     source: "essential_services",
     layout: { visibility: "none" },
     paint: {
