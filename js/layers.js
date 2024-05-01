@@ -44,6 +44,18 @@ let road_dietColor = [
   "#9aacae",
 ];
 
+let PTIcolor = [
+  "interpolate",
+  ["linear"],
+  ["get", "ptiwkdy"],
+  1.3,
+  "#82E0AA",
+  1.7,
+  "FFC300",
+  10.0,
+  "#FF5733",
+];
+
 const layers = {
   boundaries: {
     id: "boundaries",
@@ -261,7 +273,7 @@ const layers = {
     filter: ["all", ["==", "state", "Pennsylvania"]],
     paint: {
       "line-width": 1.4,
-      "line-color": "#2f41a3",
+      "line-color": PTIcolor,
     },
   },
 };
