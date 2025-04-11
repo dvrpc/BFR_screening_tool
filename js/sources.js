@@ -33,7 +33,7 @@ const sources = {
   },
   septa_bus: {
     type: "geojson",
-    data: "https://services2.arcgis.com/9U43PSoL47wawX5S/arcgis/rest/services/Bus_Routes/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    data: "https://services2.arcgis.com/9U43PSoL47wawX5S/arcgis/rest/services/Transit_Routes_(Spring_2025)/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
   },
   road_diet: {
     type: "geojson",
@@ -41,7 +41,7 @@ const sources = {
   },
   inrix: {
     type: "geojson",
-    data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_INRIX_TravelTimeData/FeatureServer/0/query?where=1=1&outsr=4326&outfields=*&f=geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
   },
 };
 
