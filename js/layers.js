@@ -261,6 +261,7 @@ const layers = {
     layout: {
       visibility: "none",
     },
+    filter: ["all", ["==", "limited_access", "n"]],
     paint: {
       "line-width": 1.6,
       "line-color": [
