@@ -106,14 +106,6 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-    } else if (feature.layer.source == "essential_services") {
-      let msg = `
-             <p>
-             Type: ${feature.properties["type"]}</br>
-             </p>`;
-      if (messages.indexOf(msg) == -1) {
-        messages.push(msg);
-      }
     } else if (feature.layer.source == "inrix") {
       let msg = `
              <p>

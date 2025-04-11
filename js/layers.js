@@ -254,33 +254,6 @@ const layers = {
       "line-color": road_dietColor,
     },
   },
-  essential_services: {
-    id: "essential_services",
-    type: "circle",
-    source: "essential_services",
-    layout: { visibility: "none" },
-    paint: {
-      "circle-opacity": 0.4,
-      "circle-radius": 5,
-      "circle-color": [
-        "match",
-        ["get", "type"],
-        "Activity Center for Seniors or Disabled",
-        "#fca9f4", //light pink
-        "Health Facility",
-        "yellow",
-        "Food Store",
-        "purple",
-        "School - College, University",
-        "green",
-        "School - Private",
-        "blue",
-        "School - Public",
-        "orange",
-        "gray",
-      ],
-    },
-  },
   inrix: {
     id: "inrix",
     type: "line",
