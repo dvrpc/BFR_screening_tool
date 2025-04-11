@@ -33,6 +33,7 @@ map.on("load", () => {
     "truck_percent",
     "septa_bus",
     "road_diet",
+    "rhin",
     "inrix",
   ].forEach((layer) => {
     add_pointer_when_hovering(map, layer);
@@ -55,6 +56,7 @@ form.addEventListener("change", function () {
   let truck_percent = form.elements["truck_percent"];
   let septa_bus = form.elements["septa_bus"];
   let road_diet = form.elements["road_diet"];
+  let rhin = form.elements["rhin"];
   let inrix = form.elements["inrix"];
 
   let checkboxes = [
@@ -70,6 +72,7 @@ form.addEventListener("change", function () {
     truck_percent,
     septa_bus,
     road_diet,
+    rhin,
     inrix,
   ];
   checkboxes.forEach((box) => {
@@ -105,6 +108,7 @@ map.on("click", (e) => {
       "truck_percent",
       "septa_bus",
       "road_diet",
+      "rhin",
       "inrix",
     ],
   });

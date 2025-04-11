@@ -254,6 +254,26 @@ const layers = {
       "line-color": road_dietColor,
     },
   },
+  rhin: {
+    id: "rhin",
+    type: "line",
+    source: "rhin",
+    layout: {
+      visibility: "none",
+    },
+    paint: {
+      "line-width": 1.6,
+      "line-color": [
+        "match",
+        ["get", "type"],
+        "bp",
+        "#ff1493", //pink
+        "ksi",
+        "#40e0d0", //teal
+        "gray",
+      ],
+    },
+  },
   inrix: {
     id: "inrix",
     type: "line",

@@ -39,6 +39,10 @@ const sources = {
     type: "geojson",
     data: "./data/road_diet_candidates.geojson",
   },
+  rhin: {
+    type: "geojson",
+    data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/arcgis/rest/services/rhin/FeatureServer",
+  },
   inrix: {
     type: "geojson",
     data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",

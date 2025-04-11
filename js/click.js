@@ -106,6 +106,16 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
+    } else if (feature.layer.source == "rhin") {
+      let msg = `
+             <p>
+             Crash Count: ${feature.properties["crashcount"]}</br>
+             Total Killed: ${feature.properties["total_killed"]}</br>
+             Total Major Injury: ${feature.properties["total_maj_injury"]}</br>
+             </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
     } else if (feature.layer.source == "inrix") {
       let msg = `
              <p>
