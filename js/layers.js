@@ -120,7 +120,7 @@ const layers = {
     id: "lts",
     type: "line",
     source: "lts_vector",
-    "source-layer": "existing_conditions_lts",
+    //"source-layer": "existing_conditions_lts",
     layout: {
       visibility: "none",
     },
@@ -145,7 +145,7 @@ const layers = {
     id: "bike_fac",
     type: "line",
     source: "lts_vector",
-    "source-layer": "existing_conditions_lts",
+    //"source-layer": "existing_conditions_lts",
     filter: ["all", ["!=", "bikefacili", "No Accomodation"]],
     layout: {
       visibility: "none",
