@@ -17,7 +17,7 @@ const sources = {
   },
   lts_vector: {
     type: "vector",
-    url: "https://tiles.dvrpc.org/data/lts.json",
+    url: "https://tiles.dvrpc.org/data/lts_v2.json",
   },
   circuit: {
     type: "geojson",
@@ -41,7 +41,7 @@ const sources = {
   },
   rhin: {
     type: "geojson",
-    data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/arcgis/rest/services/rhin/FeatureServer",
+    data: "./data/rhin_lines.geojson",
   },
   inrix: {
     type: "geojson",
