@@ -16,7 +16,7 @@ const sources = {
     data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BicycleCounts/FeatureServer/0/query?where=1%3D1&outfields=*&outSR=4326&f=geojson",
   },
   lts_vector: {
-    type: "vector",
+    type: "geojson",
     url: "https://tiles.dvrpc.org/data/lts_v2.json",
   },
   circuit: {
