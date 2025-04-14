@@ -9,7 +9,8 @@ const sources = {
   },
   traffic_counts: {
     type: "geojson",
-    data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/TrafficCounts/FeatureServer/0/query?where=1%3D1&outFields=recordnum,setdate,setyear,mcd,rdprefix,route,road,cntdir,type,aadt,co_name,mun_name&outSR=4326&f=geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/trafficcounts/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    //https://arcgis.dvrpc.org/portal/rest/services/Transportation/TrafficCounts/FeatureServer/0/query?where=1%3D1&outFields=recordnum,setdate,setyear,mcd,rdprefix,route,road,cntdir,type,aadt,co_name,mun_name&outSR=4326&f=geojson",
   },
   bike_counts: {
     type: "geojson",
@@ -45,7 +46,7 @@ const sources = {
   },
   inrix: {
     type: "geojson",
-    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=ptiwkd,ptiwkd0610,ptiwkd1519&where=1%3D1&f=geojson",
   },
 };
 
