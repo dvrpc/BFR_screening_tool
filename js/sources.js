@@ -45,7 +45,8 @@ const sources = {
   },
   inrix: {
     type: "geojson",
-    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?where=1%3D1&outFields=segid,roadnumber,roadnumb_1,roadname,roadlist,state,county,sliproad,ptiwkd,Shape__Length,ptiwkd0610,ptiwkd1519,lanes&geometry=&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&f=json",
+    //https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
   },
 };
 
