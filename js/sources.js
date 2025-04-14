@@ -41,7 +41,7 @@ const sources = {
   },
   rhin: {
     type: "geojson",
-    data: "./data/rhin_lines.geojson",
+    data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/arcgis/rest/services/rhin/FeatureServer",
   },
   inrix: {
     type: "geojson",

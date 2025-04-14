@@ -70,14 +70,14 @@ const make_popup_message = (featurelist, lat, lng) => {
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-    } else if (feature.layer.id == "bike_fac") {
-      let msg = `
-             <p>
-             Bicycle Facility: ${feature.properties["bike_fac~2"]}
-             </p>`;
-      if (messages.indexOf(msg) == -1) {
-        messages.push(msg);
-      }
+      // } else if (feature.layer.id == "bike_fac") {
+      //   let msg = `
+      //          <p>
+      //          Bicycle Facility: ${feature.properties["bike_fac~2"]}
+      //          </p>`;
+      //   if (messages.indexOf(msg) == -1) {
+      //     messages.push(msg);
+      //   }
     } else if (feature.layer.source == "traffic") {
       let msg = `
              <p>
