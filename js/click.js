@@ -110,7 +110,7 @@ const make_popup_message = (featurelist, lat, lng) => {
              <p>
              Crash Count: ${feature.properties["crashcount"]}</br>
              Total Killed: ${feature.properties["total_killed"]}</br>
-             Total Major Injury: ${feature.properties["total_maj_injury"]}</br>
+             Total Major Injury: ${feature.properties["total_maj_inj"]}</br>
              </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
