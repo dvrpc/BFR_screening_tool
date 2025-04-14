@@ -63,10 +63,9 @@ const make_popup_message = (featurelist, lat, lng) => {
       }
     } else if (feature.layer.id == "lts") {
       let msg = `
-              <p>Lanes: ${feature.properties["totnumlane"]}</br>
-              Speed: ${feature.properties["linspeed_ltse"]}</br>
-              Slope: ${feature.properties["slope_perc"]}</br>
-              Bicycle Facility: ${feature.properties["bikefacili"]}
+              <p>Lanes: ${feature.properties["totnumla~1"]}</br>
+              Speed: ${feature.properties["vcur_prt~3"]}</br>
+              Slope: ${feature.properties["rise_run"]}</br>
               </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
@@ -74,7 +73,7 @@ const make_popup_message = (featurelist, lat, lng) => {
     } else if (feature.layer.id == "bike_fac") {
       let msg = `
              <p>
-             Bicycle Facility: ${feature.properties["bikefacili"]}
+             Bicycle Facility: ${feature.properties["bike_fac~2"]}
              </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
