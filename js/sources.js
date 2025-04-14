@@ -40,7 +40,7 @@ const sources = {
     data: "./data/road_diet_candidates.geojson",
   },
   rhin: {
-    type: "geojson",
+    type: "json",
     data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/arcgis/rest/services/rhin/FeatureServer",
   },
   inrix: {
