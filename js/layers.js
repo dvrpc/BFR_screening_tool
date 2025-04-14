@@ -120,7 +120,7 @@ const layers = {
     id: "lts",
     type: "line",
     source: "lts_vector",
-    //"source-layer": "existing_conditions_lts",
+    "source-layer": "lts",
     layout: {
       visibility: "none",
     },
@@ -128,7 +128,7 @@ const layers = {
       "line-width": 1.25,
       "line-color": [
         "match",
-        ["get", "lts_score"],
+        ["get", "lts"],
         1,
         "#2c7d3f ", //dark green
         2,
@@ -145,15 +145,15 @@ const layers = {
     id: "bike_fac",
     type: "line",
     source: "lts_vector",
-    //"source-layer": "existing_conditions_lts",
-    filter: ["all", ["!=", "bikefacili", "No Accomodation"]],
+    "source-layer": "lts",
+    filter: ["all", ["!=", "bike_fac~2", "No Accommodation"]],
     layout: {
       visibility: "none",
     },
     paint: {
       "line-color": [
         "match",
-        ["get", "bikefacili"],
+        ["get", "bike_fac~2"],
         "Bike Lane",
         "#fca9f4", //light pink
         "Bike Route",
