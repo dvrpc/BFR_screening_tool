@@ -12,14 +12,14 @@ const sources = {
     data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/trafficcounts/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
     cluster: true,
     clusterMaxZoom: 12,
-    clusterRadius: 50,
+    clusterRadius: 25,
   },
   bike_counts: {
     type: "geojson",
     data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BicycleCounts/FeatureServer/0/query?where=1%3D1&outfields=*&outSR=4326&f=geojson",
     cluster: true,
     clusterMaxZoom: 12,
-    clusterRadius: 50,
+    clusterRadius: 25,
   },
   lts_vector: {
     type: "vector",
