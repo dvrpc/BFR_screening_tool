@@ -99,7 +99,7 @@ const layers = {
     },
     minzoom: 8,
     paint: {
-      "circle-opacity": 0.4,
+      "circle-opacity": 0.8,
       "circle-radius": 3,
       "circle-color": "black",
     },
@@ -286,7 +286,7 @@ const layers = {
     //filter: ["all", ["==", "state", "Pennsylvania"]],
     paint: {
       "line-width": 1.4,
-      "line-color": PTIcolor,
+      "line-color": "#FF0000", //PTIcolor,
     },
   },
 };
