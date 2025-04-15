@@ -97,6 +97,7 @@ const layers = {
     layout: {
       visibility: "none",
     },
+    minzoom: 8,
     paint: {
       "circle-opacity": 0.4,
       "circle-radius": 3,
@@ -110,6 +111,7 @@ const layers = {
     layout: {
       visibility: "none",
     },
+    minzoom: 8,
     paint: {
       "circle-opacity": 0.9,
       "circle-radius": 4,

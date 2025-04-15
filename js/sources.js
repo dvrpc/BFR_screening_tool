@@ -10,11 +10,16 @@ const sources = {
   traffic_counts: {
     type: "geojson",
     data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/trafficcounts/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
-    //https://arcgis.dvrpc.org/portal/rest/services/Transportation/TrafficCounts/FeatureServer/0/query?where=1%3D1&outFields=recordnum,setdate,setyear,mcd,rdprefix,route,road,cntdir,type,aadt,co_name,mun_name&outSR=4326&f=geojson",
+    cluster: true,
+    clusterMaxZoom: 12,
+    clusterRadius: 50,
   },
   bike_counts: {
     type: "geojson",
     data: "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BicycleCounts/FeatureServer/0/query?where=1%3D1&outfields=*&outSR=4326&f=geojson",
+    cluster: true,
+    clusterMaxZoom: 12,
+    clusterRadius: 50,
   },
   lts_vector: {
     type: "vector",
