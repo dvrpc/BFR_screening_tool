@@ -35,7 +35,7 @@ const make_popup_message = (featurelist, lat, lng) => {
         Count Number: ${feature.properties["recordnum"]}</br>
         Year: ${feature.properties["setyear"]}</br>
         Count Type: ${feature.properties["type"]}</br>
-        AADT: ${feature.properties["aadt"]}
+        Volume: ${feature.properties["volume"]}
         </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);

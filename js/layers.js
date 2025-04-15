@@ -101,7 +101,7 @@ const layers = {
     paint: {
       "circle-opacity": 0.4,
       "circle-radius": 3,
-      "circle-color": "gray",
+      "circle-color": "black",
     },
   },
   bike_counts: {
