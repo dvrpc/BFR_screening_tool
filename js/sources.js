@@ -51,10 +51,9 @@ const sources = {
   },
   inrix: {
     type: "geojson",
-    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?where=state='PENNSYLVANIA'&outFields=ptiwkd,ptiwkd0610,ptiwkd1519&outSR=4326&f=geojson",
-    cluster: true,
-    clusterMaxZoom: 12,
-    clusterRadius: 50,
+    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?where=state='PENNSYLVANIA'&outFields=ptiwkd,ptiwkd0610,ptiwkd1519&outSR=4326&returnGeometry=true&f=geojson",
+
+    //data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?where=state='PENNSYLVANIA'&outFields=ptiwkd,ptiwkd0610,ptiwkd1519&outSR=4326&f=geojson",
   },
 };
 
