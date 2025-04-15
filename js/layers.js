@@ -47,7 +47,7 @@ let road_dietColor = [
 let PTIcolor = [
   "interpolate",
   ["linear"],
-  ["get", "ptiwkdy"],
+  ["get", "ptiwkd"],
   1.3,
   "#82E0AA",
   1.7,
@@ -280,7 +280,8 @@ const layers = {
     type: "line",
     source: "inrix",
     layout: { visibility: "none" },
-    filter: ["all", ["==", "state", "Pennsylvania"]],
+    minzoom: 6,
+    //filter: ["all", ["==", "state", "Pennsylvania"]],
     paint: {
       "line-width": 1.4,
       "line-color": PTIcolor,
