@@ -46,7 +46,8 @@ const sources = {
   },
   inrix: {
     type: "geojson",
-    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?where=1%3D1&outFields=ptiwkd,ptiwkd0610,ptiwkd1519&outSR=4326&f=geojson",
+    //https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
     //ptiwkd,ptiwkd0610,ptiwkd1519
   },
 };
