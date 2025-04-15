@@ -282,7 +282,7 @@ const layers = {
     type: "line",
     source: "inrix",
     layout: { visibility: "none" },
-    minzoom: 6,
+    //minzoom: 6,
     //filter: ["all", ["==", "state", "Pennsylvania"]],
     paint: {
       "line-width": 1.4,
