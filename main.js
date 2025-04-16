@@ -40,6 +40,63 @@ map.on("load", () => {
   });
 });
 
+map.on("zoomend", function () {
+  const currentZoom = map.getZoom();
+
+  // Only fetch inrix data when zoomed in enough and layer is visible
+  if (
+    currentZoom >= 8 &&
+    map.getLayoutProperty("inrix", "visibility") === "visible"
+  ) {
+    // Get the current map bounds
+    const bounds = map.getBounds();
+
+    // Create a bounding box parameter for the API
+    const bbox = `${bounds.getWest()},${bounds.getSouth()},${bounds.getEast()},${bounds.getNorth()}`;
+
+    // Build the URL with spatial filter
+    const url = `https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?outFields=ptiwkd,ptiwkd0610,ptiwkd1519&geometry=${bbox}&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&returnGeometry=true&f=geojson`;
+
+    console.log("Fetching data with URL:", url);
+
+    // Fetch data for current view
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data && data.features) {
+          console.log(`Loaded ${data.features.length} features`);
+
+          // Update the source with the new data
+          map.getSource("inrix").setData(data);
+
+          // Make sure the layer is visible and the filter is not excluding all features
+          // Temporarily remove the filter to see if that's causing the issue
+          map.setFilter("inrix", null);
+
+          // Force the layer to re-render
+          map.setLayoutProperty("inrix", "visibility", "visible");
+
+          // Log a sample feature to inspect its properties
+          if (data.features.length > 0) {
+            console.log(
+              "Sample feature properties:",
+              data.features[0].properties
+            );
+          }
+        } else {
+          console.error("Invalid GeoJSON structure:", data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error loading inrix data:", error);
+      });
+  }
+});
 //define what happens when the legend form is clicked on
 
 let form = document.getElementById("legend-form");

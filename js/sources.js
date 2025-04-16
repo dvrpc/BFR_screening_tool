@@ -49,9 +49,16 @@ const sources = {
     type: "geojson",
     data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/arcgis/rest/services/rhin/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
   },
+  //inrix: {
+  //  type: "geojson",
+  //  data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?where=county='MONTGOMERY'&outFields=state,ptiwkd,ptiwkd0610,ptiwkd1519&outSR=4326&returnGeometry=true&f=geojson",
+  //},
   inrix: {
     type: "geojson",
-    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/cmp2021_inrix_traveltimedata/FeatureServer/0/query?where=state='PENNSYLVANIA'&outFields=ptiwkd,ptiwkd0610,ptiwkd1519&outSR=4326&returnGeometry=true&f=geojson",
+    data: {
+      type: "FeatureCollection",
+      features: [],
+    },
   },
 };
 

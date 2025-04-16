@@ -282,11 +282,11 @@ const layers = {
     type: "line",
     source: "inrix",
     layout: { visibility: "none" },
-    //minzoom: 6,
-    filter: [">", ["get", "ptiwkd"], 0],
+    minzoom: 12,
+    filter: ["all", ["==", "state", "PENNSYLVANIA"]],
     paint: {
       "line-width": 1.4,
-      "line-color": "#FF0000", //PTIcolor,
+      "line-color": PTIcolor,
     },
   },
 };
