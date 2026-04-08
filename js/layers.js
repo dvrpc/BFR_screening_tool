@@ -148,25 +148,25 @@ const layers = {
     type: "line",
     source: "lts_vector",
     "source-layer": "lts",
-    filter: ["all", ["!=", "bike_fac~2", 0]], //No Accommodation
+    filter: ["all", ["!=", "bike_facility", "No Facility"]], //No Accommodation
     layout: {
       visibility: "none",
     },
     paint: {
       "line-color": [
         "match",
-        ["get", "bike_fac~2"],
-        2, //Bike Lane
+        ["get", "bike_facility"],
+        "Bike Lane", //Bike Lane
         "#fca9f4", //light pink
-        5, //Bike Route
+        "Signed Bike Route", //Bike Route
         "yellow", //dark pink
-        3, //Buffered Bike Lane
+        "Buffered Bike Lane", //Buffered Bike Lane
         "purple",
-        4, //Off-road Trail/Path
+        "Multi-use Trail/Off-Road", //Off-road Trail/Path
         "green",
-        6, //Protected Bike Lane
+        "Protected Bike Lane", //Protected Bike Lane
         "blue",
-        1, //Sharrow
+        "Sharrows", //Sharrow
         "orange",
         "gray",
       ],
