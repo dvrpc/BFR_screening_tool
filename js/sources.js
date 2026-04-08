@@ -22,8 +22,10 @@ const sources = {
     clusterRadius: 25,
   },
   lts_vector: {
-    type: "vector",
-    url: "https://tiles.dvrpc.org/data/lts_v2.json",
+    type: "geojson",
+    //type: "vector",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/lts_network/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    //url: "https://tiles.dvrpc.org/data/lts_v2.json",
   },
   circuit: {
     type: "geojson",
@@ -47,7 +49,8 @@ const sources = {
   },
   rhin: {
     type: "geojson",
-    data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/arcgis/rest/services/rhin/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/crash_pa_rhin/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
+    //data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/arcgis/rest/services/rhin/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
   },
   //inrix: {
   //  type: "geojson",
