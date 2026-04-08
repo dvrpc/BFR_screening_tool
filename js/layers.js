@@ -270,9 +270,9 @@ const layers = {
         "match",
         ["get", "type"],
         "bp",
-        "#4065e0ff", //blue
+        "#4065e0", //blue
         "ksi",
-        "#ff1462ff", //red
+        "#ff1462", //red
         "gray",
       ],
     },
