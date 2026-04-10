@@ -108,9 +108,9 @@ const make_popup_message = (featurelist, lat, lng) => {
     } else if (feature.layer.source == "rhin") {
       let msg = `
              <p>
-             Crash Count: ${feature.properties["crashcount"]}</br>
-             Total Killed: ${feature.properties["total_killed"]}</br>
-             Total Major Injury: ${feature.properties["total_maj_inj"]}</br>
+             Crash Count: ${feature.properties["total_crash_count"]}</br>
+             Total Killed: ${feature.properties["fatal_count"]}</br>
+             Total Major Injury: ${feature.properties["major_injury_count"]}</br>
              </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
