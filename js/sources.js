@@ -23,13 +23,9 @@ const sources = {
   },
   lts_vector: {
     //type: "geojson",
-    //OLD ---type: "vector",
     //data: "https://arcgis.dvrpc.org/portal/rest/services/transportation/lts_network/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson",
-    //OLD ---url: "https://tiles.dvrpc.org/data/lts_v2.json",
-    lts_vector: {
-      type: "geojson",
-      data: { type: "FeatureCollection", features: [] },
-    },
+    type: "geojson",
+    data: { type: "FeatureCollection", features: [] },
   },
   circuit: {
     type: "geojson",
