@@ -126,6 +126,7 @@ const layers = {
     layout: {
       visibility: "none",
     },
+    minzoom: 10,
     paint: {
       "line-width": 1.25,
       "line-color": [
@@ -152,6 +153,7 @@ const layers = {
     layout: {
       visibility: "none",
     },
+    minzoonm: 10,
     paint: {
       "line-color": [
         "match",
@@ -263,7 +265,7 @@ const layers = {
     layout: {
       visibility: "none",
     },
-    filter: ["all", ["==", "limited_access", "n"]],
+    //filter: ["all", ["==", "limited_access", "n"]],
     paint: {
       "line-width": 1.6,
       "line-color": [
@@ -282,7 +284,7 @@ const layers = {
     type: "line",
     source: "inrix",
     layout: { visibility: "none" },
-    minzoom: 12,
+    minzoom: 10,
     filter: ["all", ["==", "state", "PENNSYLVANIA"]],
     paint: {
       "line-width": 1.4,
