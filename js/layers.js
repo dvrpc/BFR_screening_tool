@@ -267,7 +267,8 @@ const layers = {
     },
     //filter: ["all", ["==", "limited_access", "n"]],
     paint: {
-      "line-width": 1.6,
+      "line-width": 2,
+      "line-opacity": 0.5,
       "line-color": [
         "match",
         ["get", "type"],
