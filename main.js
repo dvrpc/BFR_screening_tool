@@ -109,7 +109,7 @@ map.on("moveend", function () {
     const bounds = map.getBounds();
     const bbox = `${bounds.getWest()},${bounds.getSouth()},${bounds.getEast()},${bounds.getNorth()}`;
 
-    const url = `https://arcgis.dvrpc.org/portal/rest/services/transportation/lts_network/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson`;
+    const url = `https://arcgis.dvrpc.org/portal/rest/services/transportation/lts_network/FeatureServer/0/query?outFields=*&geometry=${bbox}&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&returnGeometry=true&f=geojson`;
 
     fetch(url)
       .then((response) => {
