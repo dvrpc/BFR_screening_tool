@@ -61,11 +61,12 @@ const layers = {
     id: "boundaries",
     type: "line",
     source: "boundaries",
+    "source-layer": "municipalboundaries_line",
     paint: {
       "line-color": "#d4d5d6",
       "line-width": 1,
     },
-    filter: ["all", ["==", "dvrpc_reg", "Yes"], ["==", "state", "PA"]],
+    filter: ["==", "dvrpc_reg", "Yes"],
   },
   plan: {
     id: "planned-segments",
@@ -94,10 +95,10 @@ const layers = {
     id: "traffic_counts",
     type: "circle",
     source: "traffic_counts",
+    "source-layer": "trafficcounts",
     layout: {
       visibility: "none",
     },
-    minzoom: 8,
     paint: {
       "circle-opacity": 0.8,
       "circle-radius": 3,
@@ -108,10 +109,10 @@ const layers = {
     id: "bike_counts",
     type: "circle",
     source: "bike_counts",
+    "source-layer": "bicyclecounts",
     layout: {
       visibility: "none",
     },
-    minzoom: 8,
     paint: {
       "circle-opacity": 0.9,
       "circle-radius": 4,
@@ -122,11 +123,10 @@ const layers = {
     id: "lts",
     type: "line",
     source: "lts_vector",
-    //"source-layer": "lts",
+    "source-layer": "lts_network",
     layout: {
       visibility: "none",
     },
-    minzoom: 10,
     paint: {
       "line-width": 1.25,
       "line-color": [
@@ -148,12 +148,11 @@ const layers = {
     id: "bike_fac",
     type: "line",
     source: "lts_vector",
-    //"source-layer": "lts",
+    "source-layer": "lts_network",
     filter: ["all", ["!=", "bike_facility", "No Facility"]], //No Accommodation
     layout: {
       visibility: "none",
     },
-    minzoonm: 10,
     paint: {
       "line-color": [
         "match",
@@ -164,7 +163,7 @@ const layers = {
         "yellow", //dark pink
         "Buffered Bike Lane", //Buffered Bike Lane
         "purple",
-        "Multi-use Trail/Off-Road", //Off-road Trail/Path
+        "Multi-use Trail / Off-Road", //Off-road Trail/Path
         "green",
         "Protected Bike Lane", //Protected Bike Lane
         "blue",
@@ -180,6 +179,7 @@ const layers = {
     id: "circuit",
     type: "line",
     source: "circuit",
+    "source-layer": "circuittrails",
     layout: {
       visibility: "none",
     },
@@ -262,6 +262,7 @@ const layers = {
     id: "rhin",
     type: "line",
     source: "rhin",
+    "source-layer": "crash_pa_rhin",
     layout: {
       visibility: "none",
     },

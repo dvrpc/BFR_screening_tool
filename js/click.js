@@ -46,7 +46,7 @@ const make_popup_message = (featurelist, lat, lng) => {
           Count Number: ${feature.properties["recordnum"]}</br>
           Year: ${feature.properties["setyear"]}</br>
           Facility Type: ${feature.properties["bikepedfacility"]}</br>
-          AADB: ${feature.properties["aadb"]}
+          Volume: ${feature.properties["volume"]}
           </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
@@ -63,21 +63,21 @@ const make_popup_message = (featurelist, lat, lng) => {
       }
     } else if (feature.layer.id == "lts") {
       let msg = `
-              <p>Lanes: ${feature.properties["totnumla~1"]}</br>
-              Speed: ${feature.properties["vcur_prt~3"]}</br>
-              Slope: ${feature.properties["rise_run"]}</br>
+              <p>Lanes: ${feature.properties["totnumlanes"]}</br>
+              Speed: ${feature.properties["vehiclespeed"]}</br>
+              Slope: ${feature.properties["slope"]}</br>
               </p>`;
       if (messages.indexOf(msg) == -1) {
         messages.push(msg);
       }
-      // } else if (feature.layer.id == "bike_fac") {
-      //   let msg = `
-      //          <p>
-      //          Bicycle Facility: ${feature.properties["bike_fac~2"]}
-      //          </p>`;
-      //   if (messages.indexOf(msg) == -1) {
-      //     messages.push(msg);
-      //   }
+    } else if (feature.layer.id == "bike_fac") {
+      let msg = `
+             <p>
+             Bicycle Facility: ${feature.properties["bike_facility"]}
+             </p>`;
+      if (messages.indexOf(msg) == -1) {
+        messages.push(msg);
+      }
     } else if (feature.layer.source == "traffic") {
       let msg = `
              <p>

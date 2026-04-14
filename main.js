@@ -98,34 +98,6 @@ map.on("zoomend", function () {
   }
 });
 
-map.on("moveend", function () {
-  const currentZoom = map.getZoom();
-
-  if (
-    currentZoom >= 8 &&
-    (map.getLayoutProperty("lts", "visibility") === "visible" ||
-      map.getLayoutProperty("bike_fac", "visibility") === "visible")
-  ) {
-    const bounds = map.getBounds();
-    const bbox = `${bounds.getWest()},${bounds.getSouth()},${bounds.getEast()},${bounds.getNorth()}`;
-
-    const url = `https://arcgis.dvrpc.org/portal/rest/services/transportation/lts_network/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson`;
-
-    fetch(url)
-      .then((response) => {
-        if (!response.ok)
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        return response.json();
-      })
-      .then((data) => {
-        if (data && data.features) {
-          map.getSource("lts_vector").setData(data);
-        }
-      })
-      .catch((error) => console.error("Error loading LTS data:", error));
-  }
-});
-
 //define what happens when the legend form is clicked on
 
 let form = document.getElementById("legend-form");
